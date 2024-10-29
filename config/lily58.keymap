@@ -16,6 +16,20 @@
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&kp CLCK>;
         };
+
+        Lay1: Lay1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAY1";
+            #binding-cells = <0>;
+            bindings = <&to 1>, <&to 0>;
+        };
+
+        Lay2: Lay2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAY2";
+            #binding-cells = <0>;
+            bindings = <&to 2>, <&to 0>;
+        };
     };
 
     keymap {
@@ -34,7 +48,7 @@
 &kp TAB     &kp Q   &kp W   &kp E         &kp R     &kp T                            &kp Y      &kp U     &kp I             &kp O    &kp P     &kp BACKSPACE
 &to 0       &kp A   &kp S   &kp D         &kp F     &kp G                            &kp H      &kp J     &kp K             &kp L    &kp SEMI  &kp ENTER
 &Caps       &kp Z   &kp X   &kp C         &kp V     &kp B      &kp LBKT    &kp RBKT  &kp N      &kp M     &kp COMMA         &kp DOT  &kp FSLH  &sk RSHFT
-                            &kp LEFT_GUI  &kp LALT  &kp SPACE  &to 1       &to 2     &kp SPACE  &kp RALT  &kp LEFT_CONTROL
+                            &kp LEFT_GUI  &kp LALT  &kp SPACE  &Lay2       &Lay1     &kp SPACE  &kp RALT  &kp LEFT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
